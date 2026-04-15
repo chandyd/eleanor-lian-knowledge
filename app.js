@@ -1,5 +1,22 @@
 // Eleanor Lian Complete Experience - Main JavaScript
 
+// Global error handler to hide loading on any error
+window.addEventListener('error', function(e) {
+    console.error('Global error:', e.error);
+    const loading = document.getElementById('loading');
+    if (loading) {
+        loading.style.display = 'none';
+    }
+});
+
+// Also hide loading if page takes too long
+setTimeout(() => {
+    const loading = document.getElementById('loading');
+    if (loading) {
+        loading.style.display = 'none';
+    }
+}, 5000); // 5 second timeout
+
 // Character Data
 const characters = [
     {
