@@ -50,283 +50,166 @@ const characters = [
         id: 5,
         name: "KING EADWIG",
         title: "King of Nuvolandia",
-        image: "images/Sigillum Maximum Personaggi/Re Eadwig.png",
-        description: "Father of Aileen, petrified with the kingdom. Wise ruler and master of ancient cloud magic.",
+        image: "images/Sigillum Maximum Personaggi/Re Eadwg e i suoi soldati morti e tramutati in pietra.png",
+        description: "Father of Aileen, turned to stone along with his army. His fate drives Aileen's quest.",
         tags: ["King", "Father", "Nuvolana", "Petrified", "Royalty"],
         story: "Sigillum Maximum",
-        powers: ["Royal magic", "Cloud manipulation"],
+        powers: ["Royal magic", "Leadership", "Combat"],
         relationships: ["Aileen (daughter)", "Queen Eloria (wife)"]
     },
     {
         id: 6,
         name: "ASHER",
-        title: "Mysterious Ally",
-        image: "images/Sigillum Maximum Personaggi/Asher.png",
-        description: "Enigmatic character with hidden powers and connections to the ancient magic of Nuvolandia.",
-        tags: ["Mysterious", "Ally", "Ancient Magic", "Secret"],
-        story: "Sigillum Maximum",
-        powers: ["Unknown magic", "Stealth", "Wisdom"],
-        relationships: ["Aileen (ally)"]
+        title: "The Clown",
+        image: "images/Il Pagliaccio e il Castello di Ghiaccio Personaggi/Asher.png",
+        description: "Mysterious clown with a tragic past, searching for redemption in the Ice Castle.",
+        tags: ["Protagonist", "Clown", "Tragic", "Redemption", "Mysterious"],
+        story: "The Clown & Ice Castle",
+        powers: ["Acrobatics", "Illusions", "Emotional manipulation"],
+        relationships: ["Thalìa (companion)", "Ice Castle Guardians (enemies)"]
     },
     {
         id: 7,
-        name: "THALÌA (18 anni)",
-        title: "Young Protagonist",
-        image: "images/Il Pagliaccio e il Castello di Ghiaccio/Thalìa 18 anni.jpeg",
-        description: "Young woman caught in the mystery of the ice castle and the enigmatic clown.",
-        tags: ["Protagonist", "Young Adult", "Mystery"],
-        story: "The Clown and the Ice Castle",
-        powers: ["Curiosity", "Bravery", "Intuition"],
-        relationships: ["George (companion)"]
+        name: "THALÌA",
+        title: "Ice Princess",
+        image: "images/Il Pagliaccio e il Castello di Ghiaccio Personaggi/Thalìa 18 anni.jpeg",
+        description: "Princess of the Ice Castle, trapped by a curse. Seeks freedom and connection with Asher.",
+        tags: ["Princess", "Ice Magic", "Cursed", "Companion", "Royalty"],
+        story: "The Clown & Ice Castle",
+        powers: ["Ice magic", "Cryokinesis", "Royal authority"],
+        relationships: ["Asher (companion)", "Ice Castle Guardians (family/enemies)"]
     },
     {
         id: 8,
-        name: "GEORGE (adulto)",
-        title: "Companion",
-        image: "images/Il Pagliaccio e il Castello di Ghiaccio/George adulto.png",
-        description: "Adult companion in the journey through the mysterious ice castle.",
-        tags: ["Companion", "Adult", "Support"],
-        story: "The Clown and the Ice Castle",
-        powers: ["Protection", "Wisdom", "Loyalty"],
-        relationships: ["Thalìa (companion)"]
+        name: "GEORGE",
+        title: "Bein's Companion",
+        image: "images/Bein Personaggi/George.png",
+        description: "Loyal friend and guide to Bein in the World of Colors. Provides wisdom and support.",
+        tags: ["Companion", "Guide", "Wise", "Loyal", "Support"],
+        story: "Bein & World of Colors",
+        powers: ["Wisdom", "Guidance", "Support"],
+        relationships: ["Bein (companion)", "Color Guardians (allies)"]
     }
 ];
 
-// Stories Data
+// Story Data
 const stories = [
     {
         id: 1,
         title: "Sigillum Maximum",
         subtitle: "The Seal of the Seven Secrets",
-        genre: "YA Epic Fantasy",
-        description: "Aileen, princess of Nuvolandia, discovers she is the reincarnation of Aer and must save her kingdom from petrification. In a journey through magical worlds, she must reconstruct the Sigillum Maximum with the help of Dorcha, Grogher, and other allies.",
-        wordCount: 108000,
-        chapters: 47,
-        characters: 50,
-        worlds: 5,
-        themes: ["Redemption", "Growth", "Sacrifice", "Love", "Destiny"],
-        coverImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        description: "Aileen must save her kingdom from petrification by finding the seven magical seals. A journey of magic, love, and redemption.",
+        image: "images/Sigillum Maximum Personaggi/Aileen, 18 anni.png",
+        characters: ["Aileen", "Dorcha", "Grogher", "Queen Eloria", "King Eadwig"],
+        world: "Nuvolandia",
+        status: "In Progress"
     },
     {
         id: 2,
         title: "The Clown & Ice Castle",
-        subtitle: "A Dark Fantasy Tale",
-        genre: "Dark Fantasy",
-        description: "A haunting tale of a mysterious clown and an enchanted ice castle that holds secrets of a forgotten kingdom. As the protagonist delves deeper, they uncover truths about themselves and the nature of reality.",
-        wordCount: 85000,
-        chapters: 35,
-        characters: 25,
-        worlds: 3,
-        themes: ["Mystery", "Identity", "Memory", "Loss", "Discovery"],
-        coverImage: "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        subtitle: "A Tale of Redemption",
+        description: "Asher the clown seeks redemption in a magical ice castle, where he meets Thalìa, a cursed ice princess.",
+        image: "images/Il Pagliaccio e il Castello di Ghiaccio Personaggi/Asher.png",
+        characters: ["Asher", "Thalìa"],
+        world: "The Ice Castle Realm",
+        status: "In Progress"
     },
     {
         id: 3,
         title: "Bein & World of Colors",
-        subtitle: "A Magical Adventure",
-        genre: "Magical Adventure",
-        description: "Bein's journey through a world where colors hold magical powers and every hue tells a different story. A vibrant adventure exploring the relationship between perception, emotion, and reality.",
-        wordCount: 92000,
-        chapters: 40,
-        characters: 30,
-        worlds: 4,
-        themes: ["Color", "Perception", "Emotion", "Creativity", "Transformation"],
-        coverImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        subtitle: "A Journey Through Chromatic Realms",
+        description: "Bein explores a world where colors have magical properties and personalities, guided by his companion George.",
+        image: "images/Bein Personaggi/George.png",
+        characters: ["Bein", "George"],
+        world: "World of Colors",
+        status: "In Progress"
     }
 ];
 
-// Worlds Data
+// World Data
 const worlds = [
     {
         id: 1,
         name: "Nuvolandia",
-        description: "The cloud kingdom where Aileen was born. A floating realm of ever-changing clouds, magical architecture, and ancient secrets.",
-        magicSystem: "Cloud Magic - Manipulation of clouds, weather, and atmospheric phenomena",
-        inhabitants: "Nuvolana (cloud people), magical creatures",
-        keyLocations: ["Royal Palace", "Cloud Gardens", "Ancient Library", "Petrified Forest"],
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        description: "A kingdom in the clouds where inhabitants can mold clouds and travel on them. Ruled by cloud magic.",
+        image: "images/Sigillum Maximum Personaggi/Regina Eloria.png",
+        magic: "Cloud manipulation, light magic",
+        inhabitants: "Nuvolanas (cloud people), humans, magical creatures"
     },
     {
         id: 2,
         name: "The Ice Castle Realm",
-        description: "A frozen kingdom trapped in eternal winter, home to the mysterious ice castle and its enigmatic clown guardian.",
-        magicSystem: "Ice Magic - Control over cold, ice, and winter elements",
-        inhabitants: "Ice spirits, winter creatures, the Clown",
-        keyLocations: ["Ice Castle", "Frozen Lake", "Crystal Caves", "Snow Forest"],
-        image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        description: "A frozen kingdom with a magical ice castle at its center. Home to ice magic and crystalline creatures.",
+        image: "images/Il Pagliaccio e il Castello di Ghiaccio Personaggi/Thalìa 18 anni.jpeg",
+        magic: "Ice magic, cryokinesis",
+        inhabitants: "Ice beings, crystalline creatures, magical guardians"
     },
     {
         id: 3,
         name: "World of Colors",
-        description: "A vibrant dimension where each color has its own magical properties and emotional resonance.",
-        magicSystem: "Color Magic - Powers derived from different colors and their emotional associations",
-        inhabitants: "Color beings, chromatic creatures, artists",
-        keyLocations: ["Rainbow Valley", "Prism Palace", "Monochromatic Desert", "Chromatic Sea"],
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        description: "A vibrant realm where colors are alive and have magical properties. Each color region has unique characteristics.",
+        image: "images/Bein Personaggi/George.png",
+        magic: "Color magic, chromatic energy",
+        inhabitants: "Color beings, chromatic creatures, magical entities"
     }
 ];
 
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Eleanor Lian Complete Experience initialized');
+// Load Stories
+function loadStories() {
+    const storiesGrid = document.getElementById('storiesGrid');
+    if (!storiesGrid) return;
     
-    // Initialize navigation
-    initNavigation();
+    storiesGrid.innerHTML = '';
     
-    // Initialize gallery
-    initGallery();
-    
-    // Initialize character cards
-    initCharacterCards();
-    
-    // Initialize smooth scrolling
-    initSmoothScroll();
-    
-    // Initialize animations
-    initAnimations();
-    
-    // Initialize download buttons
-    initDownloads();
-});
-
-// Navigation
-function initNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-    
-    // Update active nav link on scroll
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Smooth scroll on click
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Update active link
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
-    });
-}
-
-// Gallery
-function initGallery() {
-    const gallery = document.querySelector('.gallery');
-    
-    if (!gallery) return;
-    
-    // Sample images from the workspace
-    const imageFiles = [
-        { path: 'images/Sigillum Maximum Personaggi/Aileen, 18 anni.png', title: 'Aileen - Princess of Nuvolandia' },
-        { path: 'images/Sigillum Maximum Personaggi/Dorcha.png', title: 'Dorcha - Former Dark Lord' },
-        { path: 'images/Sigillum Maximum Personaggi/Grogher su Sidae.jpg', title: 'Grogher on Sidae' },
-        { path: 'images/Sigillum Maximum Personaggi/Regina Eloria.png', title: 'Queen Eloria' },
-        { path: 'images/Sigillum Maximum Personaggi/Re Eadwig.png', title: 'King Eadwig' },
-        { path: 'images/Sigillum Maximum Personaggi/Asher.png', title: 'Asher' },
-        { path: 'images/Sigillum Maximum Personaggi/Majory.png', title: 'Majory' },
-        { path: 'images/Sigillum Maximum Personaggi/Raertha.jpg', title: 'Raertha' },
-        { path: 'images/Sigillum Maximum Personaggi/FHEALL ANZIANA.png', title: 'Fheall Anziana' },
-        { path: 'images/Sigillum Maximum Personaggi/dorcha e aileen nella grotta.png', title: 'Dorcha and Aileen in Cave' },
-        { path: 'images/Sigillum Maximum Personaggi/Helbert.png', title: 'Helbert' },
-        { path: 'images/Sigillum Maximum Personaggi/Grogher, Dorcha e Aileen alla festa degli gnomi.png', title: 'Party with Gnomes' },
-        { path: 'images/Il Pagliaccio e il Castello di Ghiaccio/Thalìa 18 anni.jpeg', title: 'Thalìa (18 years)' },
-        { path: 'images/Il Pagliaccio e il Castello di Ghiaccio/Thalìa 8 anni.jpeg', title: 'Thalìa (8 years)' },
-        { path: 'images/Il Pagliaccio e il Castello di Ghiaccio/George adulto.png', title: 'George (adult)' },
-        { path: 'images/Il Pagliaccio e il Castello di Ghiaccio/George 6 anni.png', title: 'George (6 years)' }
-    ];
-    
-    // Clear gallery
-    gallery.innerHTML = '';
-    
-    // Add images to gallery
-    imageFiles.forEach((image, index) => {
-        const galleryItem = document.createElement('div');
-        galleryItem.className = 'gallery-item fade-in';
-        galleryItem.style.animationDelay = `${index * 0.1}s`;
-        
-        galleryItem.innerHTML = `
-            <a href="${image.path}" data-lightbox="gallery" data-title="${image.title}">
-                <img src="${image.path}" alt="${image.title}" onerror="this.src='https://via.placeholder.com/300x300/1a1a2e/e94560?text=Image+Not+Found'">
-                <div class="overlay">
-                    <p>${image.title}</p>
+    stories.forEach(story => {
+        const storyCard = document.createElement('div');
+        storyCard.className = 'story-card';
+        storyCard.innerHTML = `
+            <div class="story-image">
+                <img src="${story.image}" alt="${story.title}" onerror="this.src='https://via.placeholder.com/400x300/1a1a2e/e94560?text=${story.title}'">
+            </div>
+            <div class="story-content">
+                <h3>${story.title}</h3>
+                <p class="text-gold">${story.subtitle}</p>
+                <p>${story.description}</p>
+                <div class="story-meta">
+                    <span><i class="fas fa-globe"></i> ${story.world}</span>
+                    <span><i class="fas fa-users"></i> ${story.characters.length} characters</span>
+                    <span><i class="fas fa-circle"></i> ${story.status}</span>
                 </div>
-            </a>
+            </div>
         `;
-        
-        gallery.appendChild(galleryItem);
+        storiesGrid.appendChild(storyCard);
     });
-    
-    // Initialize Lightbox
-    if (typeof lightbox !== 'undefined') {
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'albumLabel': 'Image %1 of %2'
-        });
-    }
 }
 
-// Character Cards
-function initCharacterCards() {
-    const characterGrid = document.querySelector('.character-grid');
+// Load Characters
+function loadCharacters() {
+    const charactersGrid = document.getElementById('charactersGrid');
+    if (!charactersGrid) return;
     
-    if (!characterGrid) return;
+    charactersGrid.innerHTML = '';
     
-    // Clear existing cards
-    characterGrid.innerHTML = '';
-    
-    // Add character cards
-    characters.forEach((character, index) => {
+    characters.forEach(character => {
         const card = document.createElement('div');
-        card.className = 'character-card fade-in';
-        card.style.animationDelay = `${index * 0.2}s`;
-        
+        card.className = 'character-card';
         card.innerHTML = `
             <div class="character-image">
-                <img src="${character.image}" alt="${character.name}" onerror="this.src='https://via.placeholder.com/300x250/1a1a2e/e94560?text=${character.name}'">
+                <img src="${character.image}" alt="${character.name}" onerror="this.src='https://via.placeholder.com/300x400/1a1a2e/e94560?text=${character.name}'">
             </div>
             <div class="character-content">
                 <h3>${character.name}</h3>
-                <p class="text-gold"><i class="fas fa-crown"></i> ${character.title}</p>
+                <p class="text-gold">${character.title}</p>
                 <p>${character.description}</p>
                 <div class="character-tags">
                     ${character.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                 </div>
                 <button class="btn btn-outline mt-2" onclick="showCharacterDetails(${character.id})">
-                    <i class="fas fa-info-circle"></i> Details
+                    View Details
                 </button>
             </div>
         `;
-        
-        characterGrid.appendChild(card);
+        charactersGrid.appendChild(card);
     });
 }
 
@@ -374,3 +257,132 @@ function showCharacterDetails(characterId) {
             </div>
         </div>
     `;
+    
+    // Remove any existing modal
+    const existingModal = document.querySelector('.modal-overlay');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Add new modal to body
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    
+    // Show the modal
+    const modal = document.querySelector('.modal-overlay');
+    modal.style.display = 'flex';
+}
+
+// Close Modal Function
+function closeModal() {
+    const modal = document.querySelector('.modal-overlay');
+    if (modal) {
+        modal.style.display = 'none';
+        // Remove after animation
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
+
+// Load Gallery Images
+function loadGallery() {
+    const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) return;
+    
+    galleryGrid.innerHTML = '';
+    
+    // Sample gallery images (in a real implementation, this would scan the images directory)
+    const galleryImages = [
+        { src: 'images/Sigillum Maximum Personaggi/Aileen, 18 anni.png', category: 'sigillum', title: 'Aileen' },
+        { src: 'images/Sigillum Maximum Personaggi/Dorcha.png', category: 'sigillum', title: 'Dorcha' },
+        { src: 'images/Sigillum Maximum Personaggi/Grogher su Sidae.jpg', category: 'sigillum', title: 'Grogher' },
+        { src: 'images/Sigillum Maximum Personaggi/Regina Eloria.png', category: 'sigillum', title: 'Queen Eloria' },
+        { src: 'images/Sigillum Maximum Personaggi/Re Eadwg e i suoi soldati morti e tramutati in pietra.png', category: 'sigillum', title: 'King Eadwig' },
+        { src: 'images/Il Pagliaccio e il Castello di Ghiaccio Personaggi/Asher.png', category: 'clown', title: 'Asher' },
+        { src: 'images/Il Pagliaccio e il Castello di Ghiaccio Personaggi/Thalìa 18 anni.jpeg', category: 'clown', title: 'Thalìa' },
+        { src: 'images/Bein Personaggi/George.png', category: 'bein', title: 'George' }
+    ];
+    
+    galleryImages.forEach(img => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.setAttribute('data-category', img.category);
+        galleryItem.innerHTML = `
+            <img src="${img.src}" alt="${img.title}" onerror="this.src='https://via.placeholder.com/300x300/1a1a2e/e94560?text=${img.title}'">
+            <div class="gallery-overlay">
+                <h4>${img.title}</h4>
+            </div>
+        `;
+        galleryGrid.appendChild(galleryItem);
+    });
+    
+    // Setup gallery filtering
+    setupGalleryFilter();
+}
+
+// Setup Gallery Filter
+function setupGalleryFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// Load Worlds
+function loadWorlds() {
+    const worldsGrid = document.getElementById('worldsGrid');
+    if (!worldsGrid) return;
+    
+    worldsGrid.innerHTML = '';
+    
+    worlds.forEach(world => {
+        const worldCard = document.createElement('div');
+        worldCard.className = 'world-card';
+        worldCard.innerHTML = `
+            <div class="world-image">
+                <img src="${world.image}" alt="${world.name}" onerror="this.src='https://via.placeholder.com/400x300/1a1a2e/e94560?text=${world.name}'">
+            </div>
+            <div class="world-content">
+                <h3>${world.name}</h3>
+                <p>${world.description}</p>
+                <div class="world-meta">
+                    <p><strong>Magic:</strong> ${world.magic}</p>
+                    <p><strong>Inhabitants:</strong> ${world.inhabitants}</p>
+                </div>
+            </div>
+        `;
+        worldsGrid.appendChild(worldCard);
+    });
+}
+
+// Load Downloads
+function loadDownloads() {
+    const downloadsGrid = document.getElementById('downloadsGrid');
+    if (!downloadsGrid) return;
+    
+    downloadsGrid.innerHTML = '';
+    
+    const downloads = [
+        { title: 'Complete Character Pack', description: 'All character images in high resolution', format: 'ZIP', size: '45 MB', icon: 'fas fa-images' },
+        { title: 'Story Summaries', description: 'PDF summaries of all three stories', format: 'PDF', size: '3 MB', icon: 'fas fa-book' },
+        { title: 'World Maps', description: 'Interactive maps of all magical worlds', format: 'HTML', size: '8 MB', icon: 'fas fa-map' },
+        { title: 'Character Database', description: 'JSON database of all characters with metadata', format: 'JSON', size: '1 MB', icon: 'fas fa-database' },
+        { title: 'Style Guide', description: 'Complete design system and branding', format: 'PDF', size: '5 MB', icon: 'fas fa-palette' },
+        { title: '
