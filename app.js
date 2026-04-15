@@ -173,61 +173,129 @@ const worlds = [
 
 // Load Stories
 function loadStories() {
-    const storiesGrid = document.getElementById('storiesGrid');
-    if (!storiesGrid) return;
+    console.log('loadStories() called');
     
-    storiesGrid.innerHTML = '';
-    
-    stories.forEach(story => {
-        const storyCard = document.createElement('div');
-        storyCard.className = 'story-card';
-        storyCard.innerHTML = `
-            <div class="story-image">
-                <img src="${story.image}" alt="${story.title}" onerror="this.src='https://via.placeholder.com/400x300/1a1a2e/e94560?text=${story.title}'">
-            </div>
-            <div class="story-content">
-                <h3>${story.title}</h3>
-                <p class="text-gold">${story.subtitle}</p>
-                <p>${story.description}</p>
-                <div class="story-meta">
-                    <span><i class="fas fa-globe"></i> ${story.world}</span>
-                    <span><i class="fas fa-users"></i> ${story.characters.length} characters</span>
-                    <span><i class="fas fa-circle"></i> ${story.status}</span>
+    try {
+        const storiesGrid = document.getElementById('storiesGrid');
+        if (!storiesGrid) {
+            console.error('storiesGrid element not found!');
+            return;
+        }
+        
+        console.log(`Found storiesGrid, loading ${stories.length} stories`);
+        
+        storiesGrid.innerHTML = '';
+        
+        stories.forEach((story, index) => {
+            console.log(`Creating card for story ${index + 1}: ${story.title}`);
+            
+            const storyCard = document.createElement('div');
+            storyCard.className = 'story-card';
+            
+            // Use placeholder if image path might be invalid
+            const imageUrl = story.image || `https://via.placeholder.com/400x300/1a1a2e/e94560?text=${encodeURIComponent(story.title)}`;
+            
+            storyCard.innerHTML = `
+                <div class="story-image">
+                    <img src="${imageUrl}" alt="${story.title}" 
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300/1a1a2e/e94560?text=${encodeURIComponent(story.title)}'"
+                         loading="lazy">
                 </div>
-            </div>
-        `;
-        storiesGrid.appendChild(storyCard);
-    });
+                <div class="story-content">
+                    <h3>${story.title}</h3>
+                    <p class="text-gold">${story.subtitle}</p>
+                    <p>${story.description}</p>
+                    <div class="story-meta">
+                        <span><i class="fas fa-globe"></i> ${story.world}</span>
+                        <span><i class="fas fa-users"></i> ${story.characters.length} characters</span>
+                        <span><i class="fas fa-circle"></i> ${story.status}</span>
+                    </div>
+                </div>
+            `;
+            
+            storiesGrid.appendChild(storyCard);
+        });
+        
+        console.log(`Successfully loaded ${stories.length} story cards`);
+        
+    } catch (error) {
+        console.error('Error in loadStories():', error);
+        
+        // Show error message to user
+        const storiesGrid = document.getElementById('storiesGrid');
+        if (storiesGrid) {
+            storiesGrid.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: var(--gold);">
+                    <p>Stories will be available soon.</p>
+                </div>
+            `;
+        }
+    }
 }
 
 // Load Characters
 function loadCharacters() {
-    const charactersGrid = document.getElementById('charactersGrid');
-    if (!charactersGrid) return;
+    console.log('loadCharacters() called');
     
-    charactersGrid.innerHTML = '';
-    
-    characters.forEach(character => {
-        const card = document.createElement('div');
-        card.className = 'character-card';
-        card.innerHTML = `
-            <div class="character-image">
-                <img src="${character.image}" alt="${character.name}" onerror="this.src='https://via.placeholder.com/300x400/1a1a2e/e94560?text=${character.name}'">
-            </div>
-            <div class="character-content">
-                <h3>${character.name}</h3>
-                <p class="text-gold">${character.title}</p>
-                <p>${character.description}</p>
-                <div class="character-tags">
-                    ${character.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+    try {
+        const charactersGrid = document.getElementById('charactersGrid');
+        if (!charactersGrid) {
+            console.error('charactersGrid element not found!');
+            return;
+        }
+        
+        console.log(`Found charactersGrid, loading ${characters.length} characters`);
+        
+        charactersGrid.innerHTML = '';
+        
+        characters.forEach((character, index) => {
+            console.log(`Creating card for character ${index + 1}: ${character.name}`);
+            
+            const card = document.createElement('div');
+            card.className = 'character-card';
+            
+            // Use placeholder if image path might be invalid
+            const imageUrl = character.image || `https://via.placeholder.com/300x400/1a1a2e/e94560?text=${encodeURIComponent(character.name)}`;
+            
+            card.innerHTML = `
+                <div class="character-image">
+                    <img src="${imageUrl}" alt="${character.name}" 
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/300x400/1a1a2e/e94560?text=${encodeURIComponent(character.name)}'"
+                         loading="lazy">
                 </div>
-                <button class="btn btn-outline mt-2" onclick="showCharacterDetails(${character.id})">
-                    View Details
-                </button>
-            </div>
-        `;
-        charactersGrid.appendChild(card);
-    });
+                <div class="character-content">
+                    <h3>${character.name}</h3>
+                    <p class="text-gold">${character.title}</p>
+                    <p>${character.description}</p>
+                    <div class="character-tags">
+                        ${character.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    <button class="btn btn-outline mt-2" onclick="showCharacterDetails(${character.id})">
+                        View Details
+                    </button>
+                </div>
+            `;
+            
+            charactersGrid.appendChild(card);
+        });
+        
+        console.log(`Successfully loaded ${characters.length} character cards`);
+        
+    } catch (error) {
+        console.error('Error in loadCharacters():', error);
+        
+        // Show error message to user
+        const charactersGrid = document.getElementById('charactersGrid');
+        if (charactersGrid) {
+            charactersGrid.innerHTML = `
+                <div class="container" style="text-align: center; padding: 2rem;">
+                    <h3 style="color: var(--gold);">Characters Loading Error</h3>
+                    <p>Unable to load character data. Please refresh the page.</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Refresh Page</button>
+                </div>
+            `;
+        }
+    }
 }
 
 // Character Details Modal
@@ -484,21 +552,44 @@ function setupNavigation() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
-    // Load all data
-    loadStories();
-    loadCharacters();
-    loadGallery();
-    loadWorlds();
-    loadDownloads();
+    console.log('DOMContentLoaded - Starting initialization...');
     
-    // Setup navigation
-    setupNavigation();
+    try {
+        // Load all data
+        console.log('Loading stories...');
+        loadStories();
+        
+        console.log('Loading characters...');
+        loadCharacters();
+        
+        console.log('Loading gallery...');
+        loadGallery();
+        
+        console.log('Loading worlds...');
+        loadWorlds();
+        
+        console.log('Loading downloads...');
+        loadDownloads();
+        
+        console.log('Setting up navigation...');
+        setupNavigation();
+        
+        console.log('All functions executed successfully!');
+    } catch (error) {
+        console.error('Error during initialization:', error);
+        // At least hide the loading screen
+        const loading = document.getElementById("loading");
+        if (loading) {
+            loading.style.display = "none";
+        }
+    }
     
-    // Hide loading indicator
+    // Hide loading indicator (fallback)
     setTimeout(() => {
         const loading = document.getElementById("loading");
         if (loading) {
             loading.style.display = "none";
         }
+        console.log('Loading hidden (timeout fallback)');
     }, 1000);
 });
