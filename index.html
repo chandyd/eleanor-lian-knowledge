@@ -173,23 +173,127 @@
     <!-- Scripts -->
     <script src="/app.js"></script>
     <script>
-        // Initialize the site when DOM is loaded
+        // ULTIMATE FALLBACK - Works even if app.js fails completely
         document.addEventListener('DOMContentLoaded', function() {
-            // Load all data
-            loadStories();
-            loadCharacters();
-            loadGallery();
-            loadWorlds();
-            loadDownloads();
+            console.log('DOMContentLoaded - Starting initialization...');
             
-            // Setup navigation (if needed)
-            // setupNavigation();
-            
-            // Hide loading indicator
+            // Check if main JS loaded after a short delay
             setTimeout(() => {
-                document.getElementById('loading').style.display = 'none';
-            }, 1000);
+                if (typeof loadStories === 'function' && typeof loadCharacters === 'function') {
+                    console.log('Main JavaScript loaded successfully!');
+                    
+                    // Load all data from main JS
+                    try {
+                        loadStories();
+                        loadCharacters();
+                        loadGallery();
+                        loadWorlds();
+                        loadDownloads();
+                        console.log('All data loaded successfully!');
+                    } catch (error) {
+                        console.error('Error loading data:', error);
+                        loadBasicContentFallback();
+                    }
+                } else {
+                    console.error('CRITICAL: Main JavaScript (app.js) failed to load!');
+                    loadBasicContentFallback();
+                }
+                
+                // Always hide loading
+                const loading = document.getElementById('loading');
+                if (loading) {
+                    loading.style.display = 'none';
+                }
+                
+            }, 500); // Small delay to ensure app.js loads
         });
+        
+        // Function to load basic content when JS fails
+        function loadBasicContentFallback() {
+            console.log('Loading basic content fallback...');
+            
+            // Stories fallback
+            const storiesGrid = document.getElementById('storiesGrid');
+            if (storiesGrid && storiesGrid.innerHTML === '') {
+                storiesGrid.innerHTML = `
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/e94560?text=Sigillum+Maximum" alt="Sigillum Maximum">
+                        </div>
+                        <div class="story-content">
+                            <h3>Sigillum Maximum</h3>
+                            <p class="text-gold">The Seal of the Seven Secrets</p>
+                            <p>Aileen must save her kingdom from petrification with the help of Dorcha and Grogher.</p>
+                            <div class="story-meta">
+                                <span><i class="fas fa-globe"></i> Nuvolandia</span>
+                                <span><i class="fas fa-users"></i> 5 characters</span>
+                                <span><i class="fas fa-circle"></i> In Progress</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/e94560?text=Clown+%26+Ice+Castle" alt="The Clown & Ice Castle">
+                        </div>
+                        <div class="story-content">
+                            <h3>The Clown & Ice Castle</h3>
+                            <p class="text-gold">A Tale of Redemption</p>
+                            <p>Asher the clown seeks redemption in a magical ice castle with Thalìa.</p>
+                            <div class="story-meta">
+                                <span><i class="fas fa-globe"></i> Ice Castle Realm</span>
+                                <span><i class="fas fa-users"></i> 2 characters</span>
+                                <span><i class="fas fa-circle"></i> In Progress</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Characters fallback
+            const charactersGrid = document.getElementById('charactersGrid');
+            if (charactersGrid && charactersGrid.innerHTML === '') {
+                charactersGrid.innerHTML = `
+                    <div class="character-card">
+                        <div class="character-image">
+                            <img src="https://via.placeholder.com/300x400/1a1a2e/e94560?text=AILEEN" alt="AILEEN">
+                        </div>
+                        <div class="character-content">
+                            <h3>AILEEN</h3>
+                            <p class="text-gold">Princess of Nuvolandia</p>
+                            <p>Reincarnation of Aer, must save her kingdom from petrification.</p>
+                            <div class="character-tags">
+                                <span class="tag">Protagonist</span>
+                                <span class="tag">Nuvolana</span>
+                                <span class="tag">Light Magic</span>
+                            </div>
+                            <button class="btn btn-outline mt-2" onclick="alert('JavaScript failed to load. Please refresh page.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="character-card">
+                        <div class="character-image">
+                            <img src="https://via.placeholder.com/300x400/1a1a2e/e94560?text=DORCHA" alt="DORCHA">
+                        </div>
+                        <div class="character-content">
+                            <h3>DORCHA</h3>
+                            <p class="text-gold">Former Dark Lord</p>
+                            <p>Redeemed antagonist turned companion and love interest of Aileen.</p>
+                            <div class="character-tags">
+                                <span class="tag">Co-protagonist</span>
+                                <span class="tag">Human</span>
+                                <span class="tag">Redemption</span>
+                            </div>
+                            <button class="btn btn-outline mt-2" onclick="alert('JavaScript failed to load. Please refresh page.')">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            console.log('Basic content fallback loaded');
+        }
     </script>
 </body>
 </html>
