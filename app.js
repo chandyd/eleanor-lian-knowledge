@@ -464,16 +464,16 @@ function loadDownloads() {
     
     downloadsGrid.innerHTML = '';
     
-    const downloads = [
-        { title: 'Complete Character Pack', description: 'All character images in high resolution', format: 'ZIP', size: '45 MB', icon: 'fas fa-images' },
-        { title: 'Story Summaries', description: 'PDF summaries of all three stories', format: 'PDF', size: '3 MB', icon: 'fas fa-book' },
-        { title: 'World Maps', description: 'Interactive maps of all magical worlds', format: 'HTML', size: '8 MB', icon: 'fas fa-map' },
-        { title: 'Character Database', description: 'JSON database of all characters with metadata', format: 'JSON', size: '1 MB', icon: 'fas fa-database' },
-        { title: 'Style Guide', description: 'Complete design system and branding', format: 'PDF', size: '5 MB', icon: 'fas fa-palette' },
-        { title: 'Press Kit', description: 'Media assets for press and promotion', format: 'ZIP
-    ];
-    
     downloads.forEach(item => {
+// Correzione manuale dell'array downloads
+const downloads = [
+    { title: 'Complete Character Pack', description: 'All character images in high resolution', format: 'ZIP', size: '45 MB', icon: 'fas fa-images' },
+    { title: 'Story Summaries', description: 'PDF summaries of all three stories', format: 'PDF', size: '3 MB', icon: 'fas fa-book' },
+    { title: 'World Maps', description: 'Interactive maps of all magical worlds', format: 'HTML', size: '8 MB', icon: 'fas fa-map' },
+    { title: 'Character Database', description: 'JSON database of all characters with metadata', format: 'JSON', size: '1 MB', icon: 'fas fa-database' },
+    { title: 'Style Guide', description: 'Complete design system and branding', format: 'PDF', size: '5 MB', icon: 'fas fa-palette' },
+    { title: 'Press Kit', description: 'Media assets for press and promotion', format: 'ZIP', size: '12 MB', icon: 'fas fa-newspaper' }
+];
         const downloadCard = document.createElement("div");
         downloadCard.className = "download-card";
         downloadCard.innerHTML = `
