@@ -44,14 +44,14 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
 }
 
 .nav-logo {
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     flex-direction: column;
 }
 
@@ -71,7 +71,7 @@ body {
 }
 
 .nav-menu {
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     list-style: none;
     gap: 2rem;
 }
@@ -102,7 +102,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     align-items: center;
     justify-content: center;
     position: relative;
@@ -148,7 +148,7 @@ body {
 }
 
 .hero-buttons {
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     gap: 1rem;
     justify-content: center;
 }
@@ -225,7 +225,7 @@ body {
 }
 
 .story-meta {
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     gap: 1rem;
     margin-top: 1rem;
     font-size: 0.9rem;
@@ -275,7 +275,7 @@ body {
 }
 
 .character-tags {
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: 1rem 0;
@@ -431,7 +431,7 @@ body {
 }
 
 .download-meta {
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
@@ -461,7 +461,7 @@ body {
     right: 0;
     bottom: 0;
     background: var(--gradient);
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     align-items: center;
     justify-content: center;
     z-index: 9999;
@@ -537,7 +537,7 @@ body {
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    display: flex;
+    display: none; /* Hide by default, JS will show if needed */
     align-items: center;
     justify-content: center;
     z-index: 10;
@@ -618,7 +618,7 @@ body {
     }
     
     .nav-menu.show {
-        display: flex;
+        display: none; /* Hide by default, JS will show if needed */
     }
     
     .nav-toggle {
