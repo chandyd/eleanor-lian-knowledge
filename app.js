@@ -385,4 +385,103 @@ function loadDownloads() {
         { title: 'World Maps', description: 'Interactive maps of all magical worlds', format: 'HTML', size: '8 MB', icon: 'fas fa-map' },
         { title: 'Character Database', description: 'JSON database of all characters with metadata', format: 'JSON', size: '1 MB', icon: 'fas fa-database' },
         { title: 'Style Guide', description: 'Complete design system and branding', format: 'PDF', size: '5 MB', icon: 'fas fa-palette' },
-        { title: '
+        { title: 'Press Kit', description: 'Media assets for press and promotion', format: 'ZIP
+    ];
+    
+    downloads.forEach(item => {
+        const downloadCard = document.createElement("div");
+        downloadCard.className = "download-card";
+        downloadCard.innerHTML = `
+            <div class="download-icon">
+                <i class="${item.icon}"></i>
+            </div>
+            <div class="download-content">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <div class="download-meta">
+                    <span>${item.format}</span>
+                    <span>${item.size}</span>
+                </div>
+                <button class="btn btn-primary mt-2">
+                    <i class="fas fa-download"></i> Download
+                </button>
+            </div>
+        `;
+        downloadsGrid.appendChild(downloadCard);
+    });
+}
+
+// Setup Navigation
+function setupNavigation() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.querySelector(".nav-menu");
+    
+    // Smooth scroll for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: "smooth"
+                });
+                
+                // Update active link
+                navLinks.forEach(l => l.classList.remove("active"));
+                this.classList.add("active");
+                
+                // Close mobile menu if open
+                if (navMenu.classList.contains("show")) {
+                    navMenu.classList.remove("show");
+                }
+            }
+        });
+    });
+    
+    // Mobile menu toggle
+    if (navToggle && navMenu) {
+        navToggle.addEventListener("click", function() {
+            navMenu.classList.toggle("show");
+        });
+    }
+    
+    // Update active link on scroll
+    window.addEventListener("scroll", function() {
+        const scrollPos = window.scrollY + 100;
+        
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute("href"));
+            if (section) {
+                if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    link.classList.add("active");
+                }
+            }
+        });
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Load all data
+    loadStories();
+    loadCharacters();
+    loadGallery();
+    loadWorlds();
+    loadDownloads();
+    
+    // Setup navigation
+    setupNavigation();
+    
+    // Hide loading indicator
+    setTimeout(() => {
+        const loading = document.getElementById("loading");
+        if (loading) {
+            loading.style.display = "none";
+        }
+    }, 1000);
+});
